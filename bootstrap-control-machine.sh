@@ -9,6 +9,10 @@ is_installed () {
   hash $1 2>/dev/null
 }
 
+is_installed_xcode () {
+  xcode-select -p &>/dev/null
+}
+
 install_xcode_clt () {
   xcode-select --install 2>/dev/null
   echo "Run this script again after installing XCode command line tools"
@@ -23,7 +27,7 @@ install_ansible () {
   pip install ansible
 }
 
-if ! is_installed gcc; then
+if ! is_installed_xcode; then
   install_xcode_clt
 fi
 
