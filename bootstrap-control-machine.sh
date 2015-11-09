@@ -20,11 +20,11 @@ install_xcode_clt () {
 }
 
 install_pip () {
-  easy_install pip
+  sudo easy_install pip
 }
 
 install_ansible () {
-  pip install ansible
+  sudo pip install ansible
 }
 
 install_homebrew () {
