@@ -3,10 +3,16 @@
 # Usage: sudo ./boostrap-control-machine.sh
 
 # OSX
-# Install pip and ansible
+# Install xcode, pip, and ansible
 
 is_installed () {
   hash $1 2>/dev/null
+}
+
+install_xcode_clt () {
+  xcode-select --install 2>/dev/null
+  echo "Run this script again after installing XCode command line tools"
+  exit 0
 }
 
 install_pip () {
@@ -16,6 +22,10 @@ install_pip () {
 install_ansible () {
   pip install ansible
 }
+
+if ! is_installed gcc; then
+  install_xcode_clt
+fi
 
 if ! is_installed pip; then
   install_pip
