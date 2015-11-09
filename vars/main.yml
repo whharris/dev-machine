@@ -1,0 +1,16 @@
+---
+downloads: ~/.ansible-downloads/
+
+homebrew_installed_packages:
+  - git
+  - brew-cask
+
+homebrew_taps:
+  - caskroom/cask
+
+homebrew_cask_appdir: /Applications
+homebrew_cask_apps:
+  - google-chrome
+  - dropbox
+  - macvim
+  - iterm2

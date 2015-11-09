@@ -3,7 +3,7 @@
 # Usage: sudo ./boostrap-control-machine.sh
 
 # OSX
-# Install xcode, pip, ansible, homebrew, and git
+# Install xcode, pip, and ansible
 
 is_installed () {
   hash $1 2>/dev/null
@@ -27,15 +27,6 @@ install_ansible () {
   sudo pip install ansible
 }
 
-install_homebrew () {
-  echo 'Installing HomeBrew. Follow the prompts.'
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-}
-
-install_git () {
-  brew install git
-}
-
 if ! is_installed_xcode; then
   install_xcode_clt
 fi
@@ -48,14 +39,6 @@ if ! is_installed ansible; then
   install_ansible
 fi
 
-if ! is_installed brew; then
-  install_homebrew
-fi
-
-if ! is_installed git; then # Now installed with Xcode. TODO: replace with modern version.
-  install_git
-fi
-
 install_dir=~/dev-machine
 if [ -e $install_dir ]; then
   echo "$install_dir already exists. Exiting..."
@@ -64,3 +47,4 @@ fi
 
 echo 'Cloning dev-machine repo. Follow the prompts.'
 git clone https://github.com/whharris/dev-machine.git $install_dir
+echo "Now: cd $install_dir && ./bootstrap.sh"
