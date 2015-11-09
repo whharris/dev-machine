@@ -28,6 +28,7 @@ install_ansible () {
 }
 
 install_homebrew () {
+  echo 'Installing HomeBrew. Follow the prompts.'
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 }
 
@@ -51,7 +52,8 @@ if ! is_installed brew; then
   install_homebrew
 fi
 
-if ! is_installed git; then
+if ! is_installed git; # Now installed with Xcode. TODO: replace with modern version.
   install_git
 fi
 
+cd ~/ && git clone git@github.com:whharris/dev-machine.git
