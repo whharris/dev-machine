@@ -1,0 +1,14 @@
+# MacVim is currently installed via the homebrew role
+# TODO: install gvim, ruby on Linux
+
+- name: Download Janus
+  git:
+    repo: https://github.com/carlhuda/janus.git
+    dest: ~/.vim
+    update: no # Handled by the Janus Rake task
+
+- name: Install Janus
+  shell: rake
+  args:
+    chdir: ~/.vim
+
