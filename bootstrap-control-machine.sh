@@ -56,4 +56,11 @@ if ! is_installed git; then # Now installed with Xcode. TODO: replace with moder
   install_git
 fi
 
-cd ~/ && git clone git@github.com:whharris/dev-machine.git
+install_dir=~/dev-machine
+if [ -e $install_dir ]; then
+  echo "$install_dir already exists. Exiting..."
+  exit 1
+fi
+
+echo 'Cloning dev-machine repo. Follow the prompts.'
+git clone https://github.com/whharris/dev-machine.git $install_dir
