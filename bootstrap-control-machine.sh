@@ -3,7 +3,7 @@
 # Usage: sudo ./boostrap-control-machine.sh
 
 # OSX
-# Install xcode, pip, and ansible
+# Install xcode, pip, ansible, homebrew, and git
 
 is_installed () {
   hash $1 2>/dev/null
@@ -27,6 +27,14 @@ install_ansible () {
   pip install ansible
 }
 
+install_homebrew () {
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+}
+
+install_git () {
+  brew install git
+}
+
 if ! is_installed_xcode; then
   install_xcode_clt
 fi
@@ -39,6 +47,11 @@ if ! is_installed ansible; then
   install_ansible
 fi
 
-# Install galaxy roles
-ansible-galaxy install --force -r roles.txt
+if ! is_installed brew; then
+  install_homebrew
+fi
+
+if ! is_installed git; then
+  install_git
+fi
 
