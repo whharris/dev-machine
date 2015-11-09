@@ -52,7 +52,7 @@ if ! is_installed brew; then
   install_homebrew
 fi
 
-if ! is_installed git; # Now installed with Xcode. TODO: replace with modern version.
+if ! is_installed git; then # Now installed with Xcode. TODO: replace with modern version.
   install_git
 fi
 
