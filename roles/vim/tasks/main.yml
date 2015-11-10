@@ -1,6 +1,11 @@
 # MacVim is currently installed via the homebrew role
 # TODO: install gvim, ruby on Linux
 
+- name: Backup Vim config
+  shell: mv ~/.vim ~/vim.bak-$(date "+%m%d%H%M%Y%S") || echo "No vim config found"; exit 0
+  args:
+    creates: ~/.vim/janus
+
 - name: Download Janus
   git:
     repo: https://github.com/carlhuda/janus.git
