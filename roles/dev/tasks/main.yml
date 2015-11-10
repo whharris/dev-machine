@@ -1,0 +1,13 @@
+---
+- name: Install IntelliJ IDEA
+  homebrew_cask: name=intellij-idea state=present
+
+- name: Install Java
+  homebrew_cask: name=java state=present
+
+- name: Install scala
+  homebrew: name=scala state=present
+
+- name: Install sbt
+  homebrew: name=sbt state=present
+

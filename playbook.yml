@@ -14,7 +14,7 @@
     - geerlingguy.homebrew
     - vim
     - shell
-    # - dev
+    - dev
 
   # tasks:
     # - include: tasks/ansible-setup.yml
