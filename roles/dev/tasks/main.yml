@@ -11,3 +11,6 @@
 - name: Install sbt
   homebrew: name=sbt state=present
 
+- name: Install AWS command line tools
+  homebrew: name=awscli state=present
+
