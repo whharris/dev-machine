@@ -1,0 +1,15 @@
+---
+- name: Install Caffeine
+  homebrew_cask: name=caffeine state=present
+
+- name: Install zsh-completions
+  homebrew: name=zsh-completions state=present
+
+- name: Install zsh-syntax-highlighting
+  homebrew: name=zsh-syntax-highlighting state=present
+
+- name: Install Oh My Zsh
+  shell: sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  args:
+    creates: ~/.oh-my-zsh
+
