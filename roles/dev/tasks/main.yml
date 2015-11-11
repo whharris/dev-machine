@@ -14,3 +14,6 @@
 - name: Install AWS command line tools
   homebrew: name=awscli state=present
 
+- name: Install mongo
+  homebrew: name=mongodb state=present
+
