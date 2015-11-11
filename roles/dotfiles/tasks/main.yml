@@ -1,0 +1,29 @@
+---
+- name: Clone dotfiles
+# TODO: https or ssh?
+  git: repo=ssh://git@github.com/whharris/dotfiles.git dest=~/dotfiles
+
+- name: Link gvimrc.after
+  # TODO: some vars belong below
+  shell: ln -s ~/dotfiles/gvimrc.after ~/.gvimrc.after
+  args:
+    creates: ~/.gvimrc.after
+
+- name: Link vimrc.after
+  shell: ln -s ~/dotfiles/vimrc.after ~/.vimrc.after
+  args:
+    creates: ~/.vimrc.after
+
+- name: Link janus config
+  shell: ln -s ~/dotfiles/janus ~/.janus
+  args:
+    creates: ~/.janus
+
+- name: Back up ZSH config
+  shell: mv ~/.zshrc ~/zshrc.bak-$(date "+%m%d%H%M%Y%S")
+
+- name: Link ZSH config
+  shell: ln -s ~/dotfiles/zshrc ~/.zshrc
+
+- name: Link Git config
+  shell: ln -s ~/dotfiles/gitconfig ~/.gitconfig

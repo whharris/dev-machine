@@ -16,6 +16,7 @@
     - shell
     - dev
     - desktop
+    - dotfiles
 
   # tasks:
     # - include: tasks/ansible-setup.yml
