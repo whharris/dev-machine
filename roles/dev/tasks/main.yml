@@ -28,3 +28,5 @@
 - name: Install Docker-Machine
   homebrew: name=docker-machine state=present
 
+- name: Install Amazon ECS CLI
+  homebrew: name=amazon-ecs-cli state=present
