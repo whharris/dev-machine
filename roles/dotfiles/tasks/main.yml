@@ -27,3 +27,5 @@
 
 - name: Link Git config
   shell: ln -s ~/dotfiles/gitconfig ~/.gitconfig
+  args:
+    creates: ~/.gitconfig
