@@ -17,3 +17,14 @@
 - name: Install mongo
   homebrew: name=mongodb state=present
 
+# TODO: Extract Docker role
+
+- name: Install VirtualBox
+  homebrew_cask: name=virtualbox state=present
+
+- name: Install Docker
+  homebrew: name=docker state=present
+
+- name: Install Docker-Machine
+  homebrew: name=docker-machine state=present
+
