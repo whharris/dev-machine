@@ -19,3 +19,6 @@
   args:
     creates: ~/Library/Preferences/IdeaIC15/colors
 
+- name: Install Google drive
+  homebrew_cask: name=google-drive state=present
+
