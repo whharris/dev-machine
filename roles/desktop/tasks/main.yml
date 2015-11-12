@@ -2,14 +2,20 @@
 - name: Install Caffeine
   homebrew_cask: name=caffeine state=present
 
-- name: Install zsh-completions
-  homebrew: name=zsh-completions state=present
-
-- name: Install zsh-syntax-highlighting
-  homebrew: name=zsh-syntax-highlighting state=present
-
-- name: Install Oh My Zsh
-  shell: sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+- name: Make themes directory
+  shell: mkdir ~/themes
   args:
-    creates: ~/.oh-my-zsh
+    creates: ~/themes
+
+- name: Download base16 iterm2 themes
+  git: repo=ssh://git@github.com/chriskempson/base16-iterm2.git dest=~/themes/base16-iterm2
+
+- name: Download base16 intellij themes
+  git: repo=ssh://git@github.com/adilosa/base16-idea.git dest=~/themes/base16-idea
+
+- name: Install base16 IntelliJ themes
+  # https://github.com/dave-tucker/dotfiles/blob/master/idea/osx.sh
+  shell: mkdir ~/Library/Preferences/IdeaIC15/colors && cd ~/themes/base16-idea && find . -name \*.icls -exec cp {} ~/Library/Preferences/IdeaIC15/colors \;
+  args:
+    creates: ~/Library/Preferences/IdeaIC15/colors
 
