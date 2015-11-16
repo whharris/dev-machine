@@ -22,3 +22,7 @@
 - name: Install Google drive
   homebrew_cask: name=google-drive state=present
 
+- name: Install CyberDuck
+  homebrew_cask: name=cyberduck state=present
+
+# TODO: Amethyst? (clib -> toggle-osx-shadows)
