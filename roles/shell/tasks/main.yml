@@ -13,3 +13,6 @@
   args:
     creates: ~/.oh-my-zsh
 
+- name: Install jq # TODO: Does this belong in a utils role?
+  homebrew: name=jq state=present
+
