@@ -25,4 +25,7 @@
 - name: Install CyberDuck
   homebrew_cask: name=cyberduck state=present
 
+- name: Install Skype
+  homebrew_cask: name=skype state=present
+
 # TODO: Amethyst? (clib -> toggle-osx-shadows)
