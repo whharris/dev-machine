@@ -28,4 +28,7 @@
 - name: Install Skype
   homebrew_cask: name=skype state=present
 
+- name: Install Tunnelblick
+  homebrew_cask: name=tunnelblick state=present
+
 # TODO: Amethyst? (clib -> toggle-osx-shadows)

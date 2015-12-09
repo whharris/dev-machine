@@ -19,9 +19,11 @@
   args:
     creates: ~/.janus
 
+# TODO: add creates to prevent this one executing every time
 - name: Back up ZSH config
   shell: mv ~/.zshrc ~/zshrc.bak-$(date "+%m%d%H%M%Y%S")
 
+# TODO: add creates to prevent this one executing every time
 - name: Link ZSH config
   shell: ln -s ~/dotfiles/zshrc ~/.zshrc
 

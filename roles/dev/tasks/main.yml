@@ -30,3 +30,6 @@
 
 - name: Install Amazon ECS CLI
   homebrew: name=amazon-ecs-cli state=present
+
+# TODO: leiningen, clojure
+# TODO: tree
