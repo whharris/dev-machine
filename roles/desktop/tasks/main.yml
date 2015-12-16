@@ -31,4 +31,7 @@
 - name: Install Tunnelblick
   homebrew_cask: name=tunnelblick state=present
 
+- name: Install MindNode
+  homebrew_cask: name=mindnode-pro state=present
+
 # TODO: Amethyst? (clib -> toggle-osx-shadows)
