@@ -31,5 +31,18 @@
 - name: Install Amazon ECS CLI
   homebrew: name=amazon-ecs-cli state=present
 
+# TODO: Python role?
+- name: Install python/pip with homebrew
+  homebrew: name=python state=present
+
+- name: Install virtualenv
+  pip: name=virtualenv
+
+- name: Install virtualenvwrapper
+  pip: name=virtualenvwrapper
+
+- name: Install PyLint
+  pip: name=pylint
+
 # TODO: leiningen, clojure
 # TODO: tree
