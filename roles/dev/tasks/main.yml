@@ -1,4 +1,7 @@
 ---
+- name: Install git-lfs
+  homebrew: name=git-lfs state=present
+
 - name: Install IntelliJ IDEA
   homebrew_cask: name=intellij-idea-ce state=present
 
@@ -11,6 +14,9 @@
 - name: Install sbt
   homebrew: name=sbt state=present
 
+- name: Install websocket-client (for ENSIME)
+  pip: name=websocket-client
+
 - name: Install AWS command line tools
   homebrew: name=awscli state=present
 
@@ -21,6 +27,12 @@
 
 - name: Install VirtualBox
   homebrew_cask: name=virtualbox state=present
+
+- name: Install Vagrant
+  homebrew_cask: name=vagrant state=present
+
+- name: Install Packer
+  homebrew_cask: name=packer state=present
 
 - name: Install Docker
   homebrew: name=docker state=present
@@ -46,3 +58,4 @@
 
 # TODO: leiningen, clojure
 # TODO: tree
+# TODO: add gradle?
